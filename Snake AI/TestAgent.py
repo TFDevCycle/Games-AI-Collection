@@ -15,7 +15,6 @@ def main():
 	print("Finally, the game will automatically restart whenever the snake dies.")
 	print("\nNow, which snake agent would you like to observe?")
 	print("Each agent to choose from generates unique patterns of movement.")
-	#Loop until user selects a valid option
 	while True:
 		input_num = input("Type a number from 1-3: ")
 

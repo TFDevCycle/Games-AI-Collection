@@ -3,6 +3,7 @@ import random
 import collections
 from helpfile.snakeGameGATest import SnakeGameGATest
 from helpfile.snake import Snake
+from helpfile.snakeGame import *
 from helpfile import neuralNetwork as nn
 from helpfile import geneticAlgorithm as ga 
 import os
@@ -21,7 +22,6 @@ class SnakeGameGATrain(SnakeGameGATest):
 		self.fitness_scores = []
 		self.game_scores = []
 		self.num_generations = 0
-
 
 	def game_over(self):
 		self.fitness_scores.append(self.calc_fitness())
@@ -43,17 +43,18 @@ class SnakeGameGATrain(SnakeGameGATest):
 
 			self.game_scores = []
 
-			file = open("GAdata.txt", "a+")
+			file = open("Snake AI\_traininfo\Generations\GAdata.txt", "a+")
 			file.write("Generation " + str(self.num_generations) + "\n")
+			file.write("Highscore: " + str(high_score_per_cur_gen) + "\n")
 			file.write("Best Individual: " + str(best_individual) + "\n")
 			file.write("Best Fitness: " + str(best_fitness) + "\n")
 			file.write("Average Fitness:" + str(average_fitness) + "\n")
-			file.write("Average Game Score:" + str(average_game_score) + "\n\n")
-			file.write("\n")
+			file.write("Average Game Score:" + str(average_game_score))
+			file.write("\n------------------------------------------------------------------------------------------------------\n")
 			file.close()
 
 			if self.num_generations%10 == 0:
-				abs_file_path = os.path.join(os.getcwd(), "populations/population_" + str(self.num_generations) + ".txt")
+				abs_file_path = os.path.join(os.getcwd(), "Snake AI\traininfo\Populations\population_" + str(self.num_generations) + ".txt")
 				file = open(abs_file_path, "a+")
 				file.write(str(self.population))
 				file.write("\n")

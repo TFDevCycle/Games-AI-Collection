@@ -11,7 +11,12 @@ class Snake():
 		self.directions = collections.deque()
 
 	def initialize_snake(self):
+		snake_row = self.rows//2
+		snake_col = 1
 
+		return (snake_row,snake_col)
+
+	def update_body_positions(self):
 	
 		for i,pos in enumerate(self.body):
 

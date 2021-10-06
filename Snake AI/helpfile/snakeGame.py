@@ -12,7 +12,7 @@ class SnakeGame():
 
 		self.width = 500
 		self.height = 600
-		self.grid_start_y = 100
+		self.grid_start_y = 50
 		self.win = pygame.display.set_mode((self.width, self.height))
 		self.play = True
 		self.restart = False
@@ -28,7 +28,7 @@ class SnakeGame():
 		
 	def redraw_window(self):
 
-		self.win.fill(pygame.Color(10, 49, 245))
+		self.win.fill(pygame.Color(104, 60, 135))
 		self.draw_data_window()
 		self.draw_grid()
 		self.draw_grid_updates()
@@ -41,8 +41,8 @@ class SnakeGame():
 		font = pygame.font.SysFont('calibri', 20)
 		score_text = font.render('Score: ' + str(self.score),1, (255,255,255))
 		high_score_text = font.render('High Score: ' + str(self.high_score), 1, (255,255,255))
-		self.win.blit(score_text, (30, 50))
-		self.win.blit(high_score_text, (self.width - 140, 50))
+		self.win.blit(score_text, (30, 10))
+		self.win.blit(high_score_text, (self.width - 140, 10))
 
 	def draw_grid(self):
 
@@ -109,7 +109,7 @@ class SnakeGame():
 			pos_y = pos[0]
 			pos_x = pos[1]
 			
-			pygame.draw.rect(self.win, pygame.Color(31,240,12), (space_col*pos_x+1, self.grid_start_y + space_row*pos_y+1, space_col-1, space_row-1))
+			pygame.draw.rect(self.win, pygame.Color(255,255,255), (space_col*pos_x+1, self.grid_start_y + space_row*pos_y+1, space_col-1, space_row-1))
 
 		
 		head = self.snake.body[0]
