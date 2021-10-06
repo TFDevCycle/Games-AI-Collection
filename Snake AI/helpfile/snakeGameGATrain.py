@@ -54,7 +54,7 @@ class SnakeGameGATrain(SnakeGameGATest):
 			file.close()
 
 			if self.num_generations%10 == 0:
-				abs_file_path = os.path.join(os.getcwd(), "Snake AI\traininfo\Populations\population_" + str(self.num_generations) + ".txt")
+				abs_file_path = os.path.join(os.getcwd(), "Snake AI\_traininfo\Populations\population_" + str(self.num_generations) + ".txt")
 				file = open(abs_file_path, "a+")
 				file.write(str(self.population))
 				file.write("\n")
